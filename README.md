@@ -1,5 +1,7 @@
 # passport-umd-cas
 
+[![npm version](https://badge.fury.io/js/passport-umd-cas.svg)](https://badge.fury.io/js/passport-umd-cas)
+
 Passport strategy for UMD CAS login system
 
 ## Install

@@ -8,8 +8,17 @@ Passport strategy for UMD CAS login system
     npm install passport-umd-cas
 
 ## Usage
-    passport.use(new UMDCASStrategy());
+    passport.use(new UMDCASStrategy({ callbackURL: '/umd/return' }));
 
-    app.get('/user', passport.authenticate('umd-cas'), (req, res) => {
-        res.send(req.user);
+    app.get('/umd/login', passport.authenticate('umd-cas'));
+    app.get('/umd/return', passport.authenticate('umd-cas'), (req, res) => {
+        res.redirect('/')
+    });
+
+    app.get('/', (req, res) => {
+        if (req.user) {
+            res.send(user);
+        } else {
+            res.send('Please login');
+        }
     });

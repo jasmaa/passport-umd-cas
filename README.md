@@ -1,6 +1,7 @@
 # passport-umd-cas
 
 [![npm version](https://badge.fury.io/js/passport-umd-cas.svg)](https://badge.fury.io/js/passport-umd-cas)
+[![jasmaa](https://circleci.com/gh/jasmaa/passport-umd-cas.svg?style=svg)](https://circleci.com/gh/jasmaa/passport-umd-cas)
 
 Passport strategy for UMD CAS login system
 

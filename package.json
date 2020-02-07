@@ -7,16 +7,20 @@
     "UMD",
     "CAS"
   ],
-  "version": "1.1.0",
+  "version": "1.1.1",
   "main": "./lib",
   "dependencies": {
     "axios": "^0.19.2",
     "passport-strategy": "^1.0.0",
     "xml2js": "^0.4.23"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-passport-strategy": "^1.0.1",
+    "mocha": "^7.0.1"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/.bin/mocha --reporter spec"
   },
   "author": "Jason Maa",
   "licenses": [

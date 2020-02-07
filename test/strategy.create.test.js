@@ -4,9 +4,19 @@ const Strategy = require('../lib/strategy');
 
 chai.use(require('chai-passport-strategy'));
 
-describe('Strategy invalid', () => {
+describe('Strategy creation', () => {
 
-    describe('Create strategy with no options', () => {
+
+    describe('Create valid strategy', () => {
+
+        const strategy = new Strategy({ callbackURL: '/example/callback' });
+
+        it('has callback url', () => {
+            expect(strategy._callbackURL).to.equal('/example/callback');
+        });
+    });
+
+    describe('Create invalid strategy with no options', () => {
 
         it('fails with TypeError', () => {
             const test = () => new Strategy();
@@ -14,7 +24,7 @@ describe('Strategy invalid', () => {
         });
     });
 
-    describe('Create strategy with empty options', () => {
+    describe('Create invalid strategy with empty options', () => {
 
         it('fails with TypeError', () => {
             const test = () => new Strategy({});
@@ -22,7 +32,7 @@ describe('Strategy invalid', () => {
         });
     });
 
-    describe('Create strategy with malformed options', () => {
+    describe('Create invalid strategy with malformed options', () => {
 
         it('fails with TypeError', () => {
             const test1 = () => new Strategy(6);
@@ -32,5 +42,5 @@ describe('Strategy invalid', () => {
             expect(test2).to.throw('UMDCASStrategy needs a callback url');
         });
     });
-    
+
 });

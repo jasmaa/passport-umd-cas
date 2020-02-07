@@ -20,7 +20,7 @@
     "mocha": "^7.0.1"
   },
   "scripts": {
-    "test": "./node_modules/.bin/mocha --reporter spec"
+    "test": "./node_modules/.bin/mocha test"
   },
   "author": "Jason Maa",
   "licenses": [

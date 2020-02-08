@@ -18,7 +18,7 @@ Passport strategy for UMD CAS login system
 
     app.get('/', (req, res) => {
         if (req.user) {
-            res.send(user);
+            res.send(req.user);
         } else {
             res.send('Please login');
         }

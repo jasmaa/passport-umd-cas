@@ -6,7 +6,6 @@ chai.use(require('chai-passport-strategy'));
 
 describe('Strategy creation', () => {
 
-
     describe('Create valid strategy', () => {
 
         const strategy = new Strategy({ callbackURL: '/example/callback' });

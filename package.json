@@ -17,10 +17,13 @@
   "devDependencies": {
     "chai": "^4.2.0",
     "chai-passport-strategy": "^1.0.1",
-    "mocha": "^7.0.1"
+    "codecov": "^3.7.0",
+    "mocha": "^7.0.1",
+    "nyc": "^15.1.0"
   },
   "scripts": {
-    "test": "./node_modules/.bin/mocha test"
+    "test": "./node_modules/.bin/nyc ./node_modules/.bin/mocha test",
+    "coverage": "./node_modules/.bin/nyc report --reporter=lcov"
   },
   "author": "Jason Maa",
   "licenses": [

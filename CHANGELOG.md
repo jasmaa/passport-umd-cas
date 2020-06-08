@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.5] - 2020-06-08
+### Added
+- Add npmignore
+
 ## [1.1.4] - 2020-06-08
 ### Added
 - Add login example

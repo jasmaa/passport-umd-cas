@@ -6,6 +6,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.4] - 2020-06-08
+### Added
+- Add login example
+
+### Changed
+- Replace real connections with mock in tests
+
 ## [1.1.3] - 2020-06-06
 ### Added
 - Add Codecov

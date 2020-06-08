@@ -1,0 +1,13 @@
+{
+  "name": "passport-umd-cas-login-example",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "passport": "^0.4.1",
+    "passport-umd-cas": "^1.1.3",
+    "pug": "^3.0.0"
+  }
+}

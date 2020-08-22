@@ -125,4 +125,38 @@ describe('Strategy authentication', () => {
             expect(error).to.equal('Authentication failed');
         });
     });
+
+    describe('Receiving request with valid ticket and onSuccess callback', () => {
+        
+        const strategy = new Strategy({ callbackURL: '/example/callback' }, (profile, done) => {
+            done({
+                name: profile.uid
+            });
+        });
+        let user, info, error;
+
+        before(done => {
+            chai.passport.use(strategy)
+                .success((u, i) => {
+                    user = u;
+                    info = i;
+                    done();
+                })
+                .fail(err => {
+                    error = err;
+                    done();
+                })
+                .req(req => {
+                    // Mock request
+                    req.query = { ticket: 'validTicket' };
+                    req.protocol = 'http';
+                    req.get = param => param == 'host' ? 'localhost' : null;
+                })
+                .authenticate();
+        });
+
+        it('successfully authenticates', () => {
+            expect(user).to.have.property('name', 'studentUID')
+        });
+    });
 });

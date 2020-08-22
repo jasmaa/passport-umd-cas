@@ -42,4 +42,19 @@ describe('Strategy creation', () => {
         });
     });
 
+    describe('Create valid strategy with onSuccess callback', () => {
+
+        function onSuccess(profile, done) {
+            done({
+                name: profile.uid
+            });
+        }
+
+        const strategy = new Strategy({ callbackURL: '/example/callback' }, onSuccess);
+
+        it('has callback function', () => {
+            expect(strategy._onSuccess).to.equal(onSuccess);
+        });
+    });
+
 });
